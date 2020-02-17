@@ -53,7 +53,7 @@ def foo(signum, unused):
     print('Handled')
     sys.exit(0)
 
-if __name__ == '__main__':
+def main():
     parser = argparse.ArgumentParser(description='A simple nc clone in python')
     parser.add_argument('-l', '--listen', action='store_true', help='start nc as a client instead of a server')
     parser.add_argument('-u', '--udp', action='store_true', help='use UDP instead of TCP')
@@ -92,3 +92,6 @@ if __name__ == '__main__':
     ts.start()
 
     signal.pause()
+
+if __name__ == '__main__':
+    main()
